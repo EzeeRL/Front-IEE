@@ -1,0 +1,592 @@
+:root {
+  --color-fondo: #f8fafc;
+  --color-fondo-tarjetas: #ffff;
+  --color-principal: #eb5b0d;
+  --color-secundario: #8f479a;
+  --color-texto: #5c5757;
+  --color-titulos: #1e293b;
+  --color-texto-inputs: #94a3b8;
+  --color-fondo-icons: #ffedd5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+p {
+  color: var(--color-texto);
+}
+
+h2,
+h1 {
+  text-align: center;
+  color: var(--color-titulos);
+}
+
+b {
+  color: var(--color-principal);
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--color-fondo);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(
+    to right,
+    var(--color-secundario),
+    var(--color-principal)
+  );
+  gap: 20px;
+  z-index: 1000;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.header-text {
+  color: #fff;
+  font-size: 19px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.container-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15vh;
+  padding-bottom: 40px;
+}
+
+.title-inicio {
+  width: 70%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.img-falsa {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.img-falsa-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.circle-play-video {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.svg-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  border-radius: 100%;
+  background-color: var(--color-principal);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.svg-play:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.container-button-inicio {
+  margin: 0px auto;
+}
+
+/* Media Queries para responsive */
+@media screen and (max-width: 768px) {
+  .container-inicio {
+    padding-top: 0vh;
+  }
+
+  .title-inicio {
+    width: 85%;
+    font-size: 1.5rem;
+  }
+
+  .container-button-inicio {
+    margin-top: 10vh;
+  }
+
+  .container-info-instituto {
+    width: 100%;
+  }
+
+  .info-instituto {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .container-logo {
+    display: none;
+  }
+
+  .header-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .title-inicio {
+    width: 90%;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .img-falsa {
+    width: 95%;
+  }
+
+  .svg-play {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.contenido-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  background: linear-gradient(to bottom, #f9fafb 0%, #fef6f1 70%, #fedfc5 100%);
+}
+
+.container-contenidos-video {
+  width: 80%;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centra el contenedor */
+  margin-bottom: 200px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  gap: 20px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container-contenidos-video {
+    height: 450px;
+  }
+}
+
+.title-contenido-video {
+  font-size: 30px;
+}
+
+.section-contenido {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  align-items: center;
+  width: calc(50% - 25px); /* 50% del ancho menos la mitad del gap */
+  box-sizing: border-box;
+}
+
+.button-video-section-descubrir {
+  margin-top: -10vh;
+}
+
+/* Estilo específico para el quinto elemento (que será el único en su fila) */
+.section-contenido:nth-child(5) {
+  width: 95.5%;
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  margin-bottom: 130px;
+}
+
+.svg {
+  min-width: 40px;
+  padding: 8px;
+  background-color: var(--color-fondo-icons);
+  border-radius: 50%;
+  color: var(--color-principal);
+}
+
+.container-general-info-instituto {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  gap: 40px;
+  padding: 20px;
+  background-color: var(--color-fondo-tarjetas);
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container-info-instituto {
+  width: 100%;
+}
+
+.section-instituto {
+  background: linear-gradient(to top, #f9fafb 0%, #fef6f1 70%, #fedfc5 100%);
+}
+
+.title-info-instituto {
+  text-align: left;
+}
+
+.container-fotos {
+  width: 37vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  /* background-color: #f6d2a5; */
+  border-radius: 15px;
+}
+
+.img-logo {
+  width: 200px;
+}
+
+.text-bold-instituto {
+  font-weight: bold;
+}
+
+.button-ver-video {
+  width: 28vw;
+  height: 10vh;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: linear-gradient(
+    to right,
+    var(--color-secundario),
+    var(--color-principal)
+  );
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-ver-video:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.button-ver-video-inicio {
+  width: 28vw;
+  height: 15vh;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: linear-gradient(
+    to right,
+    var(--color-secundario),
+    var(--color-principal)
+  );
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-ver-video-inicio:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container-general-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  background: linear-gradient(to bottom, #f9fafb 0%, #fef6f1 70%, #fedfc5 100%);
+}
+
+.title-form {
+  color: #fff;
+  font-size: 40px;
+  /* margin-top: -70px; */
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 60vh;
+  margin: 0 auto;
+  margin-bottom: 20vh;
+  background: linear-gradient(
+    to right,
+    var(--color-secundario),
+    var(--color-principal)
+  );
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.input {
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  outline: none;
+  color: var(--color-texto-inputs);
+}
+
+.input::placeholder {
+  color: var(--color-texto-inputs);
+}
+
+.button-form {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #8f479a, #9a4989);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-form:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  /* Ajustes para el header */
+  header {
+    height: auto;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .header-text {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* Ajustes para el contenedor inicial */
+  .container-inicio {
+    margin-top: 5vh;
+  }
+
+  .title-inicio {
+    font-size: 24px;
+    line-height: 1.3;
+    padding: 0 15px;
+    margin-bottom: 100px;
+  }
+
+  .subtitle-inicio {
+    font-size: 16px;
+    padding: 0 15px;
+    margin-top: 10px;
+  }
+
+  .img-falsa {
+    height: 200px;
+    margin: 20px 15px;
+  }
+
+  /* Ajustes para la sección de contenido del video */
+  .contenido-video {
+    margin-top: 50px;
+  }
+
+  .title-contenido-video {
+    font-size: 24px;
+    padding: 0 15px;
+  }
+
+  .container-contenidos-video {
+    width: 90%;
+    height: auto;
+    padding: 20px 10px;
+    margin-bottom: 50px;
+  }
+
+  .section-contenido {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .section-contenido:nth-child(5) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Ajustes para la sección del instituto */
+  .container-general-info-instituto {
+    width: 85%;
+    flex-direction: column;
+    gap: 20px;
+    /* padding: 15px; */
+  }
+
+  .container-fotos {
+    width: 90%;
+    height: 200px;
+  }
+
+  .title-info-instituto {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .info-instituto p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .button-ver-video {
+    width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+
+  /* Ajustes para el formulario */
+  .container-general-formulario {
+    margin-top: 50px;
+  }
+
+  .formulario {
+    width: 90%;
+    height: auto;
+    padding: 30px 0;
+    margin-bottom: 50px;
+  }
+
+  .title-form {
+    font-size: 24px;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .button-form {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  /* Ajustes generales para textos largos */
+  p,
+  .info-instituto p {
+    line-height: 1.5;
+  }
+
+  /* Eliminar saltos de línea forzados en textos */
+  br {
+    display: none;
+  }
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid transparent;
+  border-top-color: #a855f7; /* morado moderno */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 16px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .button-ver-video-inicio {
+    width: 40vw;
+    height: 10vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .button-ver-video-inicio {
+    width: 60vw;
+  }
+
+  .svg-inicio {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .container-button-inicio {
+    margin-top: 0vh;
+  }
+
+  .container-inicio {
+    margin-top: 3vh;
+  }
+
+  .img-falsa {
+    margin-top: -5vh;
+  }
+}
